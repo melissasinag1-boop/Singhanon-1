@@ -145,6 +145,13 @@
     if (e.target === detailOverlay) closeDetail();
   });
 
+  // Close detail overlay when Escape key is pressed
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !detailOverlay.hidden) {
+      closeDetail();
+    }
+  });
+
   searchInput.addEventListener("input", () => {
     searchTerm = searchInput.value;
     render();
