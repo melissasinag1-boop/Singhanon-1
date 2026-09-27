@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Singhanon — Aklanon-English Dictionary</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d3b3e">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <img src="icon.svg" alt="" class="brand-mark">
+    <div class="brand-text">
+      <h1>Singhanon</h1>
+      <p>Aklanon–English Dictionary</p>
+    </div>
+  </div>
+  <div class="menu-wrap">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-haspopup="true">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="menu-panel" id="menuPanel" hidden>
+      <button class="menu-item" data-view="dictionary">Dictionary</button>
+      <button class="menu-item" data-view="saved">Saved words</button>
+      <button class="menu-item" data-view="about">About</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="view-dictionary" class="view">
+    <div class="search-row">
+      <input type="text" id="searchInput" placeholder="Search an Aklanon word or English meaning…" autocomplete="off">
+      <button id="searchBtn" aria-label="Search">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 5L20.49 19l-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
+      </button>
+    </div>
+
+    <div class="letter-row" id="letterRow"></div>
+
+    <p class="entry-count" id="entryCount">0 entries</p>
+
+    <ul class="entry-list" id="entryList"></ul>
+
+    <p class="empty-state" id="emptyState" hidden>No matching entries found.</p>
+  </section>
+
+  <section id="view-saved" class="view" hidden>
+    <h2 class="view-title">Saved words</h2>
+    <ul class="entry-list" id="savedList"></ul>
+    <p class="empty-state" id="savedEmpty" hidden>You haven't saved any words yet. Tap the star on an entry to save it here.</p>
+  </section>
+
+  <section id="view-about" class="view" hidden>
+    <h2 class="view-title">About Singhanon</h2>
+    <p>Singhanon is a research prototype: an Aklanon–English dictionary built to give secondary learners and teachers a fast, expandable reference for the Aklanon dialect.</p>
+    <p>Entries are adapted from Salas Reyes, Zorc &amp; Prado (1969), <em>Aklanon to English</em>, a Peace Corps dictionary (ERIC ED145704).</p>
+    <p class="version">Version 2.0</p>
+  </section>
+
+</main>
+
+<div class="detail-overlay" id="detailOverlay" hidden>
+  <div class="detail-card">
+    <button class="detail-close" id="detailClose" aria-label="Close">&times;</button>
+    <p class="detail-pos" id="detailPos"></p>
+    <h2 class="detail-word" id="detailWord"></h2>
+    <p class="detail-def" id="detailDef"></p>
+    <p class="detail-example" id="detailExample"></p>
+    <button class="detail-save" id="detailSave">☆ Save word</button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

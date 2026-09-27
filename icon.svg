@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0d3b3e"/>
+  <text x="256" y="336" font-family="Georgia, 'Liberation Serif', serif" font-weight="700" font-size="300" fill="#ffffff" text-anchor="middle">S</text>
+  <rect x="176" y="381" width="160" height="21" rx="10.5" fill="#e0a52c"/>
+</svg>
